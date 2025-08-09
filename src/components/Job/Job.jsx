@@ -1,8 +1,10 @@
 import React from "react";
 import { SlLocationPin } from "react-icons/sl";
 import { CiDollar } from "react-icons/ci";
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -38,14 +40,16 @@ const Job = ({ job }) => {
               <span>{location}</span>
             </div>
             <div className="inline-flex items-center gap-1">
-                <span>
+              <span>
                 <CiDollar></CiDollar>
               </span>
               <span>{salary}</span>
             </div>
           </div>
           <div className="card-actions mt-4">
-            <button className="btn btn-primary">View Details</button>
+            <Link to={`/job/${id}`}>
+              <button className="btn btn-primary">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
